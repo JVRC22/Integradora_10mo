@@ -1,0 +1,38 @@
+# ============================================
+# UNITY PROJECT STANDARD .gitignore (Optimized)
+# ============================================
+
+# --- Unity generated folders ---
+/Library/
+/Temp/
+/Obj/
+/Logs/
+/UserSettings/
+/MemoryCaptures/
+
+# --- Build artifacts ---
+/Build/
+/Builds/
+/DerivedDataCache/
+
+# --- Visual Studio / Rider / OmniSharp ---
+*.csproj
+*.sln
+*.suo
+*.user
+*.pidb
+*.booproj
+*.tmp
+*.svd
+*.pdb
+
+# --- OS generated files ---
+.DS_Store
+Thumbs.db
+
+# --- IDEs ---
+/.vscode/
+/.idea/
+
+# --- Prevent runtime DB from being pushed ---
+Assets/_Project/StreamingAssets/Database/game.db

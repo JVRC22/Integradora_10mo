@@ -1,0 +1,44 @@
+# --- Carpetas pesadas y generadas por Unity ---
+Library/
+Temp/
+Obj/
+Logs/
+UserSettings/
+MemoryCaptures/
+
+# --- Builds / binarios ---
+Build/
+Builds/
+*/Build/
+*/Builds/
+
+# --- Archivos de sistema ---
+.DS_Store
+Thumbs.db
+
+# --- IDEs ---
+.vs/
+*.csproj
+*.sln
+*.user
+*.unityproj
+*.pidb
+*.suo
+*.userprefs
+*.booproj
+ExportedObj/
+
+# --- Crash reports / profiling ---
+SysInfo.txt
+*.stacktrace
+*.psd.meta
+
+# --- Rider / VSCode ---
+.idea/
+.vscode/
+
+# --- Archivos de cache del paquete ---
+/Packages/com.unity.collab-proxy/
+
+# --- Archivos de BD generados en runtime ---
+Assets/_Project/StreamingAssets/Database/game.db
