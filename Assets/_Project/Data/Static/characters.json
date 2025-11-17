@@ -1,0 +1,41 @@
+{
+    "version": "1.0.0",
+    "characters": [
+        {
+            "id": "choche",
+            "key": "protagonist",
+            "displayName": "Choche",
+            "role": "protagonista",
+            "description": "Estudiante atrapado en las instalaciones tras la caída del sistema. Es el único usuario humano activo dentro del campus.",
+            "isPlayable": true,
+            "tags": ["protagonista", "capitulo_1"]
+        },
+        {
+            "id": "byte",
+            "key": "ai_assistant",
+            "displayName": "Byte",
+            "role": "asistente_virtual",
+            "description": "Asistente holográfico que guía a Choche a través de los sistemas. Explica conceptos de servicios web, dependencias y autenticación.",
+            "isPlayable": false,
+            "tags": ["ia", "guia", "capitulo_1"]
+        },
+        {
+            "id": "profa_pixeles",
+            "key": "system_mentor",
+            "displayName": "Profa. Píxeles",
+            "role": "mentor_remota",
+            "description": "Voz de una profesora experta en sistemas que se comunica a través de los canales principales del campus. Actúa como respaldo teórico de Byte.",
+            "isPlayable": false,
+            "tags": ["npc", "mentor", "capitulo_1"]
+        },
+        {
+            "id": "daemon",
+            "key": "system_daemon",
+            "displayName": "Daemon",
+            "role": "antagonista",
+            "description": "Entidad digital hostil surgida de procesos mal configurados. Busca reiniciar o corromper los servicios del campus.",
+            "isPlayable": false,
+            "tags": ["antagonista", "malware", "capitulo_1"]
+        }
+    ]
+}
