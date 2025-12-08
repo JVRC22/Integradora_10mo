@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "puzzles": [
+    {
+      "id": 101,
+      "key": "academic_console_check",
+      "type": "interface",
+      "title": "Consola del Servicio Académico",
+      "description": "Simula la consola del servicio académico. El jugador debe interpretar el estado y confirmar la restauración.",
+      "difficulty": "facil",
+      "hints": [
+        "Revisa los indicadores de conexión y base de datos.",
+        "Si todos los módulos están en verde, confirma el estado."
+      ],
+      "solution": "confirmar_estado_ok"
+    }
+  ]
+}

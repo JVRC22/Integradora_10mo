@@ -1,0 +1,58 @@
+{
+  "version": "1.0.0",
+  "chapters": [
+    {
+      "id": 1,
+      "key": "chapter_1",
+      "name": "El Comienzo del Viaje",
+      "description": "Choche despierta en las instalaciones después de un ataque al sistema y debe comenzar a restaurar los servicios.",
+      "zones": [
+        {
+          "id": 1,
+          "key": "mist_forest",
+          "name": "Bosque de la Niebla",
+          "description": "Zona inicial del capítulo, conecta con el laboratorio y el área académica.",
+          "initialState": "unlocked",
+          "unlockRequirements": [],
+          "objectives": [
+            {
+              "id": "ch1_z1_obj1",
+              "description": "Habla con el Profesor Jiménez para enterarte del problema con el sistema académico.",
+              "puzzleKey": "",
+              "rewardItemKey": "",
+              "flagsOnComplete": [
+                "flag_academico_mision_asignada"
+              ]
+            }
+          ],
+          "explorationItems": []
+        },
+        {
+          "id": 2,
+          "key": "lab_console",
+          "name": "Laboratorio de Innovación",
+          "description": "Laboratorio donde se encuentra la consola principal para revisar el estado del servicio académico.",
+          "initialState": "locked",
+          "unlockRequirements": [
+            {
+              "type": "flag_active",
+              "flagId": "flag_academico_mision_asignada"
+            }
+          ],
+          "objectives": [
+            {
+              "id": "ch1_z2_obj1",
+              "description": "Usa la consola del laboratorio para revisar el estado del servicio académico.",
+              "puzzleKey": "puzzle_101_academic_status",
+              "rewardItemKey": "",
+              "flagsOnComplete": [
+                "flag_consola_academico_revisada"
+              ]
+            }
+          ],
+          "explorationItems": []
+        }
+      ]
+    }
+  ]
+}

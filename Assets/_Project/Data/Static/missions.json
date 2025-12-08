@@ -1,0 +1,38 @@
+{
+  "version": "1.0.0",
+  "missions": [
+    {
+      "id": "restore_academic_service",
+      "chapterId": 1,
+      "name": "Restaurar el servicio académico",
+      "description": "Reactivar el sistema académico de la universidad revisando la consola del laboratorio.",
+      "initialState": "not_started",
+      "states": [
+        { "id": "not_started", "description": "La misión aún no se ha iniciado." },
+        { "id": "in_progress", "description": "Choche está trabajando en revisar la consola." },
+        { "id": "waiting_turn_in", "description": "La consola ya fue revisada. Falta regresar con el Profesor Jiménez." },
+        { "id": "completed", "description": "El servicio académico fue restaurado exitosamente." }
+      ],
+      "steps": [
+        {
+          "id": "step_1",
+          "state": "not_started",
+          "triggersOn": ["flag_academico_mision_asignada"],
+          "setStateTo": "in_progress"
+        },
+        {
+          "id": "step_2",
+          "state": "in_progress",
+          "triggersOn": ["flag_consola_academico_revisada"],
+          "setStateTo": "waiting_turn_in"
+        },
+        {
+          "id": "step_3",
+          "state": "waiting_turn_in",
+          "triggersOn": ["flag_academico_mision_completada"],
+          "setStateTo": "completed"
+        }
+      ]
+    }
+  ]
+}

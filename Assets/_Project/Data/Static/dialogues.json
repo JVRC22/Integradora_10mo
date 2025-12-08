@@ -1,0 +1,113 @@
+{
+"version": "1.0.0",
+"conversations": [
+{
+"id": "prof_jimenez_mission_intro",
+"key": "prof_jimenez_mission_intro",
+"description": "Intro de la misión para restaurar el servicio académico.",
+"chapterId": 1,
+"zoneKey": "mist_forest",
+"nodes": [
+{
+"id": "n1",
+"speakerId": "prof_jimenez",
+"text": "Choche, tenemos un problema serio: el sistema académico está completamente caído.",
+"nextId": "n2"
+},
+{
+"id": "n2",
+"speakerId": "prof_jimenez",
+"text": "Sin él, no puedo ver grupos, materias ni calificaciones. Necesito que revises la consola del laboratorio.",
+"nextId": "n3"
+},
+{
+"id": "n3",
+"speakerId": "prof_jimenez",
+"text": "Ve al laboratorio de innovación y usa la consola principal para ver qué está fallando.",
+"nextId": "end",
+"flagsOnComplete": [
+"flag_academico_mision_asignada"
+]
+}
+]
+},
+{
+"id": "prof_jimenez_mission_in_progress",
+"key": "prof_jimenez_mission_in_progress",
+"description": "Diálogo repetible mientras la misión está activa.",
+"chapterId": 1,
+"zoneKey": "mist_forest",
+"nodes": [
+{
+"id": "n1",
+"speakerId": "prof_jimenez",
+"text": "Revisa la consola del laboratorio. Ahí verás el estado del servicio académico.",
+"nextId": "end"
+}
+]
+},
+{
+"id": "prof_jimenez_mission_turn_in",
+"key": "prof_jimenez_mission_turn_in",
+"description": "Cuando Choche ya revisó la consola y regresa con el profesor.",
+"chapterId": 1,
+"zoneKey": "mist_forest",
+"nodes": [
+{
+"id": "n1",
+"speakerId": "choche",
+"text": "Profesor, ya revisé la consola. El servicio académico está en línea otra vez.",
+"nextId": "n2"
+},
+{
+"id": "n2",
+"speakerId": "prof_jimenez",
+"text": "Excelente trabajo, Choche. Los alumnos podrán consultar sus materias de nuevo.",
+"nextId": "end",
+"flagsOnComplete": [
+"flag_academico_mision_completada"
+]
+}
+]
+},
+{
+"id": "prof_jimenez_after_mission",
+"key": "prof_jimenez_after_mission",
+"description": "Diálogo repetible cuando la misión ya fue completada.",
+"chapterId": 1,
+"zoneKey": "mist_forest",
+"nodes": [
+{
+"id": "n1",
+"speakerId": "prof_jimenez",
+"text": "Gracias a ti el sistema académico se mantiene estable. Ahora sí puedo seguir con mis grupos.",
+"nextId": "end"
+}
+]
+},
+{
+"id": "byte_lab_console_intro",
+"key": "byte_lab_console_intro",
+"description": "Byte explica la consola del laboratorio cuando llegas por primera vez.",
+"chapterId": 1,
+"zoneKey": "lab_console",
+"nodes": [
+{
+"id": "n1",
+"speakerId": "byte",
+"text": "Esta es la consola principal del laboratorio. Desde aquí podemos ver el estado del servicio académico.",
+"nextId": "n2"
+},
+{
+"id": "n2",
+"speakerId": "byte",
+"text": "Interactúa con la consola y revisa si todos los módulos están en verde. Si algo falla, tendrás que resolverlo.",
+"nextId": "end",
+"flagsOnComplete": [
+"flag_tutorial_consola_visto"
+]
+}
+]
+}
+]
+}

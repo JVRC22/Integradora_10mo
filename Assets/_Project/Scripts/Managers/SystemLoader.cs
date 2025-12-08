@@ -1,5 +1,6 @@
 using System.Collections;
 using System.IO;
+using _Project.Scripts.Services.Data;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -33,9 +34,12 @@ namespace _Project.Scripts.Managers
             DontDestroyOnLoad(gameObject);
 
             if (_alreadyInitialized)
-                // Si ya se inicializo todo antes, manda al menu
+            {
+                // Si ya se inicializó todo antes, manda al menú y NO sigas inicializando
                 SceneManager.LoadScene(mainMenuSceneName);
-        
+                return;
+            }
+
             _alreadyInitialized = true;
 
             StartCoroutine(InitializeCoroutine());
@@ -97,8 +101,19 @@ namespace _Project.Scripts.Managers
         // ReSharper disable Unity.PerformanceAnalysis
         private static void LoadStaticJsonData()
         {
-            // Llamar al sistema de datos estáticos
-            Debug.Log("[SystemLoader] LoadStaticJsonData() - pendiente de implementación.");
+            var service = StaticDataService.Instance;
+
+            if (service != null)
+            {
+                service.Initialize();
+            }
+            else
+            {
+                Debug.unityLogger.LogError(
+                    "[SystemLoader]",
+                    "StaticDataService.Instance es null. ¿Está el componente StaticDataService en el prefab GameSystems (o en la escena Boot) y activo?"
+                );
+            }
         }
         
         /*
@@ -132,8 +147,27 @@ namespace _Project.Scripts.Managers
         // ReSharper disable Unity.PerformanceAnalysis
         private static void LoadPlayerProgress()
         {
-            // Llamar al sistema de datos estáticos
-            Debug.Log("[SystemLoader] LoadPlayerProgress - pendiente de implementación.");
+            var db = DatabaseService.Instance;
+            var gsm = GameStateManager.Instance;
+
+            if (gsm == null)
+            {
+                Debug.LogError("[SystemLoader] GameStateManager es null. No se puede cargar progreso, usando StartNewGame().");
+                GameStateManager.Instance?.StartNewGame();
+                return;
+            }
+
+            // Si no hay DB o no abrió conexión, empezamos juego nuevo y ya
+            if (db == null || !db.IsReady)
+            {
+                Debug.LogError("[SystemLoader] DatabaseService no disponible. Usando StartNewGame().");
+                gsm.StartNewGame();
+                return;
+            }
+
+            // TODO: cuando quieras: leer slot seleccionado y cargar json de DB
+            // por ahora igual puedes dejar gsm.StartNewGame() para no complicar
+            gsm.StartNewGame();
         }
     }
 }

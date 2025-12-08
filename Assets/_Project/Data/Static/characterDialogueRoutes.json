@@ -1,0 +1,48 @@
+{
+  "version": "1.0.0",
+  "routes": [
+    {
+      "characterId": "prof_jimenez",
+      "routes": [
+        {
+          "type": "mission_state",
+          "missionId": "restore_academic_service",
+          "state": "not_started",
+          "conversationId": "prof_jimenez_mission_intro"
+        },
+        {
+          "type": "mission_state",
+          "missionId": "restore_academic_service",
+          "state": "in_progress",
+          "conversationId": "prof_jimenez_mission_in_progress"
+        },
+        {
+          "type": "mission_state",
+          "missionId": "restore_academic_service",
+          "state": "waiting_turn_in",
+          "conversationId": "prof_jimenez_mission_turn_in"
+        },
+        {
+          "type": "mission_state",
+          "missionId": "restore_academic_service",
+          "state": "completed",
+          "conversationId": "prof_jimenez_after_mission"
+        },
+        {
+          "type": "default",
+          "conversationId": "prof_jimenez_default"
+        }
+      ]
+    },
+    {
+      "characterId": "byte",
+      "routes": [
+        {
+          "type": "zone_enter",
+          "zoneKey": "lab_console",
+          "conversationId": "byte_lab_console_intro"
+        }
+      ]
+    }
+  ]
+}

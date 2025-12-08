@@ -1,0 +1,29 @@
+{
+  "version": "1.0.0",
+  "flags": [
+    {
+      "id": "flag_academico_mision_asignada",
+      "description": "Se asignó la misión de restaurar el servicio académico.",
+      "scope": "chapter_1",
+      "defaultValue": false
+    },
+    {
+      "id": "flag_consola_academico_revisada",
+      "description": "Choche revisó la consola del servicio académico en el laboratorio.",
+      "scope": "chapter_1",
+      "defaultValue": false
+    },
+    {
+      "id": "flag_academico_mision_completada",
+      "description": "La misión de restaurar el servicio académico ha sido completada.",
+      "scope": "chapter_1",
+      "defaultValue": false
+    },
+    {
+      "id": "flag_tutorial_consola_visto",
+      "description": "Byte ya explicó cómo usar la consola del laboratorio.",
+      "scope": "chapter_1",
+      "defaultValue": false
+    }
+  ]
+}
