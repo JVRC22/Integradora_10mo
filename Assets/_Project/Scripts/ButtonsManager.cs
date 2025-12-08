@@ -11,7 +11,7 @@ public class ButtonsManager : MonoBehaviour
 
     public void LoadGame()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 
     public void LoadSceneLab()
