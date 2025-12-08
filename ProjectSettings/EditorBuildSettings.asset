@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Scenes/SlotSelection.unity
     guid: 81fe0dc66518c7b4fa037290a8576f06
+  - enabled: 1
+    path: Assets/_Project/Scenes/Lab.unity
+    guid: 6b3ff61153ecd47d2acfcf09c4a9979b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
