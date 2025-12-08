@@ -14,6 +14,11 @@ public class ButtonsManager : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
+    public void LoadSceneLab()
+    {
+        SceneManager.LoadScene(3);
+    }
+
     public void OnPointerEnter(PointerEventData eventData)
     {
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);

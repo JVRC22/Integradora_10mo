@@ -24,20 +24,15 @@ public class InteractableObjectManager : MonoBehaviour
 
     public void Interact()
     {
-        if (hasBeenUsed && disableAfterUse)
-        {
-            ShowMessage("Ya has usado este objeto");
-            return;
-        }
-
-        hasBeenUsed = true;
-
         if (afterInteractionSprite != null && spriteRenderer != null)
         {
             spriteRenderer.sprite = afterInteractionSprite;
         }
 
-        ShowMessage(interactionMessage);
+        if (!string.IsNullOrEmpty(interactionMessage))
+        {
+            ShowMessage(interactionMessage);
+        }
         
         if (disableAfterUse)
         {
@@ -54,7 +49,7 @@ public class InteractableObjectManager : MonoBehaviour
         }
     }
 
-    private void ShowMessage(string message)
+    public void ShowMessage(string message)
     {
         Debug.Log($"ShowMessage llamado con: {message}");
         Debug.Log($"Panel es null? {messagePanel == null}, Text es null? {messageText == null}");
