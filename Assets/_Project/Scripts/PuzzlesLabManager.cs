@@ -16,7 +16,7 @@ public class PuzzlesLabManager : MonoBehaviour
             Debug.Log("Puzzle 1 Activado/Reparado");
             UpdateStatus("Puzzle 1 Completado");
             CheckAllPuzzles();
-            SceneManager.LoadScene(3);
+            // SceneManager.LoadScene(3);
         }
         else
         {
