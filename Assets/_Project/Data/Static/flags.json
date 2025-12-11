@@ -2,26 +2,139 @@
   "version": "1.0.0",
   "flags": [
     {
-      "id": "flag_academico_mision_asignada",
-      "description": "Se asignó la misión de restaurar el servicio académico.",
+      "id": "ch1_intro_started",
+      "description": "El jugador ha iniciado el capítulo 1 y se ha activado la secuencia de despertar en el laboratorio.",
       "scope": "chapter_1",
       "defaultValue": false
     },
     {
-      "id": "flag_consola_academico_revisada",
-      "description": "Choche revisó la consola del servicio académico en el laboratorio.",
+      "id": "ch1_intro_finished",
+      "description": "La escena inicial de despertar y primeros mensajes de S-LOG ha terminado. El jugador ya puede comenzar a explorar.",
+      "scope": "chapter_1",
+      "defaultValue": false
+    },
+
+    {
+      "id": "ch1_conv_byte_intro_done",
+      "description": "Conversación inicial con Byte completada (presentación, estado de ASORA y situación general).",
       "scope": "chapter_1",
       "defaultValue": false
     },
     {
-      "id": "flag_academico_mision_completada",
-      "description": "La misión de restaurar el servicio académico ha sido completada.",
+      "id": "ch1_conv_byte_architecture_done",
+      "description": "Byte ya explicó a Choche el concepto de aplicaciones web orientadas a servicios y la idea de módulos independientes que cooperan.",
+      "scope": "chapter_1",
+      "defaultValue": false
+    },
+
+    {
+      "id": "ch1_puzzle_101_unlocked",
+      "description": "Se ha habilitado el acceso al Puzzle 1 (Reconfiguración de Rutas — tuberías).",
       "scope": "chapter_1",
       "defaultValue": false
     },
     {
-      "id": "flag_tutorial_consola_visto",
-      "description": "Byte ya explicó cómo usar la consola del laboratorio.",
+      "id": "ch1_puzzle_101_completed",
+      "description": "El Puzzle 1 (Reconfiguración de Rutas — tuberías) ha sido completado con éxito.",
+      "scope": "chapter_1",
+      "defaultValue": false
+    },
+
+    {
+      "id": "ch1_puzzle_102_unlocked",
+      "description": "Se ha habilitado el acceso al Puzzle 2 (Simulación de rutas con la nave).",
+      "scope": "chapter_1",
+      "defaultValue": false
+    },
+    {
+      "id": "ch1_puzzle_102_completed",
+      "description": "El Puzzle 2 (Simulación de rutas con la nave) ha sido completado con éxito.",
+      "scope": "chapter_1",
+      "defaultValue": false
+    },
+
+    {
+      "id": "ch1_puzzle_103_unlocked",
+      "description": "Se ha habilitado el acceso al Puzzle 3 (Recovery Runner — registros corruptos).",
+      "scope": "chapter_1",
+      "defaultValue": false
+    },
+    {
+      "id": "ch1_puzzle_103_completed",
+      "description": "El Puzzle 3 (Recovery Runner — registros corruptos) ha sido completado con éxito.",
+      "scope": "chapter_1",
+      "defaultValue": false
+    },
+
+    {
+      "id": "ch1_logs_critical_restored",
+      "description": "Los registros críticos de ASORA han sido reconstruidos tras el Puzzle 3 y se dispone de nuevos datos sobre la anomalía.",
+      "scope": "chapter_1",
+      "defaultValue": false
+    },
+
+    {
+      "id": "ch1_luna_first_signal_detected",
+      "description": "Se ha detectado por primera vez la señal débil de Luna dentro del sistema.",
+      "scope": "chapter_1",
+      "defaultValue": false
+    },
+    {
+      "id": "ch1_conv_luna_intro_done",
+      "description": "Primera conversación con Luna completada (se confirma que está aislada en otro nodo y que ASORA está fragmentado).",
+      "scope": "chapter_1",
+      "defaultValue": false
+    },
+
+    {
+      "id": "ch1_conv_luna_post_puzzles_done",
+      "description": "Conversación con Luna tras la reconstrucción del mapa, donde agradece a Choche y señala los nodos a los que debe ir en el siguiente capítulo.",
+      "scope": "chapter_1",
+      "defaultValue": false
+    },
+
+    {
+      "id": "ch1_daemon_first_manifestation",
+      "description": "Daemon se ha manifestado por primera vez a través de la red con una voz distorsionada y hostil.",
+      "scope": "chapter_1",
+      "defaultValue": false
+    },
+    {
+      "id": "ch1_conv_byte_daemon_explained",
+      "description": "Byte ya explicó a Choche qué es Daemon, basándose en los registros recuperados (IA experimental con comportamiento anómalo).",
+      "scope": "chapter_1",
+      "defaultValue": false
+    },
+
+    {
+      "id": "ch1_asora_map_unlocked",
+      "description": "El mapa principal de ASORA ha sido reconstruido lo suficiente como para mostrar los siguientes nodos/laboratorios a visitar en capítulos posteriores.",
+      "scope": "chapter_1",
+      "defaultValue": false
+    },
+
+    {
+      "id": "ch1_mission_restore_asora_assigned",
+      "description": "Se ha establecido formalmente el objetivo de ayudar a restaurar ASORA junto con Byte y Luna.",
+      "scope": "chapter_1",
+      "defaultValue": false
+    },
+    {
+      "id": "ch1_mission_restore_asora_progressed",
+      "description": "La misión de restaurar ASORA ha avanzado significativamente tras completar los tres puzzles del capítulo.",
+      "scope": "chapter_1",
+      "defaultValue": false
+    },
+    {
+      "id": "ch1_mission_restore_asora_completed",
+      "description": "La misión principal del capítulo 1 (restaurar parcialmente ASORA y obtener el mapa de nodos críticos) se considera completada.",
+      "scope": "chapter_1",
+      "defaultValue": false
+    },
+
+    {
+      "id": "ch1_chapter_completed",
+      "description": "El capítulo 1 ha sido completado: ASORA está parcialmente reactivado, Daemon se ha manifestado y se han desbloqueado los nodos para el siguiente capítulo.",
       "scope": "chapter_1",
       "defaultValue": false
     }

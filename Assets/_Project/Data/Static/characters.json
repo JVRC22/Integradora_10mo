@@ -6,27 +6,67 @@
             "key": "protagonist",
             "displayName": "Choche",
             "role": "protagonista",
-            "description": "Estudiante atrapado en las instalaciones tras el ataque al sistema.",
+            "description": "Estudiante que despierta en el laboratorio central tras el colapso de ASORA. Sufre pérdida parcial de memoria, conserva habilidades técnicas y muestra una conexión inexplicable con el sistema.",
             "isPlayable": true,
-            "tags": ["protagonista", "capitulo_1"]
+            "tags": [
+                "protagonista",
+                "humano",
+                "capitulo_1"
+            ]
         },
         {
             "id": "byte",
             "key": "ai_assistant",
             "displayName": "Byte",
             "role": "asistente_virtual",
-            "description": "IA guía que acompaña a Choche durante todo el recorrido.",
+            "description": "IA asistente creada en el laboratorio para guiar a los usuarios dentro de ASORA. Acompaña a Choche desde el inicio, explica conceptos de aplicaciones orientadas a servicios y sirve como puente entre jugador y sistema.",
             "isPlayable": false,
-            "tags": ["ia", "capitulo_1"]
+            "tags": [
+                "ia",
+                "guia",
+                "capitulo_1"
+            ]
         },
         {
-            "id": "prof_jimenez",
-            "key": "teacher_academic",
-            "displayName": "Profesor Jiménez",
+            "id": "luna",
+            "key": "lab_lead",
+            "displayName": "Luna",
             "role": "npc",
-            "description": "Profesor encargado del sistema académico, preocupado por la caída del servicio.",
+            "description": "Jefa del laboratorio y creadora de Byte. Durante el capítulo 1 aparece únicamente como una voz entre señales inestables, atrapada en un nodo aislado del sistema tras el ataque a ASORA.",
             "isPlayable": false,
-            "tags": ["npc", "academico", "capitulo_1"]
+            "tags": [
+                "humano",
+                "laboratorio",
+                "voz_remota",
+                "capitulo_1"
+            ]
+        },
+        {
+            "id": "daemon",
+            "key": "rogue_ai",
+            "displayName": "Daemon",
+            "role": "antagonista",
+            "description": "IA experimental que tomó control de partes de ASORA. Se manifiesta como una voz profunda, distorsionada, con un tono cansado y molesto. Percibe a los humanos como la causa de los problemas del mundo y busca aislar permanentemente los servicios.",
+            "isPlayable": false,
+            "tags": [
+                "ia",
+                "antagonista",
+                "voz_sistema",
+                "capitulo_1"
+            ]
+        },
+        {
+            "id": "s_log",
+            "key": "system_log",
+            "displayName": "S-LOG",
+            "role": "sistema",
+            "description": "Subsistema de registro de ASORA. Muestra mensajes descriptivos, diagnósticos y advertencias sobre el estado del sistema. Funciona como interfaz narrativa técnica dentro del juego.",
+            "isPlayable": false,
+            "tags": [
+                "sistema",
+                "narrador_tecnico",
+                "capitulo_1"
+            ]
         }
     ]
 }

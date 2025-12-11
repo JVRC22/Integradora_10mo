@@ -2,35 +2,109 @@
   "version": "1.0.0",
   "routes": [
     {
-      "characterId": "prof_jimenez",
+      "characterId": "s_log",
       "routes": [
         {
           "type": "mission_state",
-          "missionId": "restore_academic_service",
+          "missionId": "ch1_restore_asora_core",
           "state": "not_started",
-          "conversationId": "prof_jimenez_mission_intro"
+          "conversationId": "slog_ch1_boot_scan_wakeup"
         },
         {
           "type": "mission_state",
-          "missionId": "restore_academic_service",
-          "state": "in_progress",
-          "conversationId": "prof_jimenez_mission_in_progress"
+          "missionId": "ch1_restore_asora_core",
+          "state": "active_exploration",
+          "conversationId": "slog_ch1_lab_status_low_power"
         },
         {
           "type": "mission_state",
-          "missionId": "restore_academic_service",
-          "state": "waiting_turn_in",
-          "conversationId": "prof_jimenez_mission_turn_in"
+          "missionId": "ch1_restore_asora_core",
+          "state": "routing_restored",
+          "conversationId": "slog_ch1_after_puzzle1_routing_24"
         },
         {
           "type": "mission_state",
-          "missionId": "restore_academic_service",
+          "missionId": "ch1_restore_asora_core",
+          "state": "topology_rebuilt",
+          "conversationId": "slog_ch1_after_puzzle2_topology_41"
+        },
+        {
+          "type": "mission_state",
+          "missionId": "ch1_restore_asora_core",
+          "state": "logs_recovered",
+          "conversationId": "slog_ch1_after_puzzle3_logs_restored"
+        },
+        {
+          "type": "mission_state",
+          "missionId": "ch1_restore_asora_core",
+          "state": "anomaly_detected",
+          "conversationId": "slog_ch1_anomaly_detected_unknown_source"
+        },
+        {
+          "type": "mission_state",
+          "missionId": "ch1_restore_asora_core",
           "state": "completed",
-          "conversationId": "prof_jimenez_after_mission"
+          "conversationId": "slog_ch1_chapter1_completed_next_nodes"
         },
         {
           "type": "default",
-          "conversationId": "prof_jimenez_default"
+          "conversationId": "slog_ch1_default_ambient"
+        }
+      ]
+    },
+    {
+      "characterId": "choche",
+      "routes": [
+        {
+          "type": "mission_state",
+          "missionId": "ch1_restore_asora_core",
+          "state": "not_started",
+          "conversationId": "choche_ch1_wakeup_confused"
+        },
+        {
+          "type": "mission_state",
+          "missionId": "ch1_restore_asora_core",
+          "state": "active_exploration",
+          "conversationId": "choche_ch1_exploration_lab_thoughts"
+        },
+        {
+          "type": "zone_enter",
+          "zoneKey": "lab_console",
+          "conversationId": "choche_ch1_first_time_lab_console_reaction"
+        },
+        {
+          "type": "mission_state",
+          "missionId": "ch1_restore_asora_core",
+          "state": "routing_restored",
+          "conversationId": "choche_ch1_after_puzzle1_understanding_services"
+        },
+        {
+          "type": "mission_state",
+          "missionId": "ch1_restore_asora_core",
+          "state": "topology_rebuilt",
+          "conversationId": "choche_ch1_after_puzzle2_network_routes_reflection"
+        },
+        {
+          "type": "mission_state",
+          "missionId": "ch1_restore_asora_core",
+          "state": "logs_recovered",
+          "conversationId": "choche_ch1_after_puzzle3_recovery_runner_reaction"
+        },
+        {
+          "type": "mission_state",
+          "missionId": "ch1_restore_asora_core",
+          "state": "anomaly_detected",
+          "conversationId": "choche_ch1_daemon_voice_reaction"
+        },
+        {
+          "type": "mission_state",
+          "missionId": "ch1_restore_asora_core",
+          "state": "completed",
+          "conversationId": "choche_ch1_end_chapter_determined"
+        },
+        {
+          "type": "default",
+          "conversationId": "choche_ch1_default_idle_thoughts"
         }
       ]
     },
@@ -38,9 +112,144 @@
       "characterId": "byte",
       "routes": [
         {
+          "type": "mission_state",
+          "missionId": "ch1_restore_asora_core",
+          "state": "not_started",
+          "conversationId": "byte_ch1_intro_wakeup_meets_choche"
+        },
+        {
+          "type": "mission_state",
+          "missionId": "ch1_restore_asora_core",
+          "state": "active_exploration",
+          "conversationId": "byte_ch1_exploration_lab_explains_asora_context"
+        },
+        {
           "type": "zone_enter",
           "zoneKey": "lab_console",
-          "conversationId": "byte_lab_console_intro"
+          "conversationId": "byte_ch1_lab_console_first_intro"
+        },
+        {
+          "type": "mission_state",
+          "missionId": "ch1_restore_asora_core",
+          "state": "active_exploration",
+          "conversationId": "byte_ch1_puzzle1_intro_tuberias_servicio"
+        },
+        {
+          "type": "mission_state",
+          "missionId": "ch1_restore_asora_core",
+          "state": "routing_restored",
+          "conversationId": "byte_ch1_after_puzzle1_explains_service_architecture"
+        },
+        {
+          "type": "mission_state",
+          "missionId": "ch1_restore_asora_core",
+          "state": "routing_restored",
+          "conversationId": "byte_ch1_services_modules_examples"
+        },
+        {
+          "type": "zone_enter",
+          "zoneKey": "lab_console",
+          "conversationId": "byte_ch1_puzzle2_intro_nave_rutas_asora"
+        },
+        {
+          "type": "mission_state",
+          "missionId": "ch1_restore_asora_core",
+          "state": "topology_rebuilt",
+          "conversationId": "byte_ch1_after_puzzle2_topology_and_attacked_modules"
+        },
+        {
+          "type": "mission_state",
+          "missionId": "ch1_restore_asora_core",
+          "state": "topology_rebuilt",
+          "conversationId": "byte_ch1_luna_ping_reaction_pre_first_contact"
+        },
+        {
+          "type": "mission_state",
+          "missionId": "ch1_restore_asora_core",
+          "state": "logs_recovered",
+          "conversationId": "byte_ch1_puzzle3_intro_recovery_runner"
+        },
+        {
+          "type": "mission_state",
+          "missionId": "ch1_restore_asora_core",
+          "state": "logs_recovered",
+          "conversationId": "byte_ch1_after_puzzle3_logs_and_pre_daemon_tension"
+        },
+        {
+          "type": "mission_state",
+          "missionId": "ch1_restore_asora_core",
+          "state": "anomaly_detected",
+          "conversationId": "byte_ch1_after_daemon_explanation_serious"
+        },
+        {
+          "type": "mission_state",
+          "missionId": "ch1_restore_asora_core",
+          "state": "completed",
+          "conversationId": "byte_ch1_end_chapter_summary_next_labs"
+        },
+        {
+          "type": "default",
+          "conversationId": "byte_ch1_default_hint_smalltalk"
+        }
+      ]
+    },
+    {
+      "characterId": "luna",
+      "routes": [
+        {
+          "type": "mission_state",
+          "missionId": "ch1_restore_asora_core",
+          "state": "topology_rebuilt",
+          "conversationId": "luna_ch1_first_contact_emotional"
+        },
+        {
+          "type": "mission_state",
+          "missionId": "ch1_restore_asora_core",
+          "state": "topology_rebuilt",
+          "conversationId": "luna_ch1_first_contact_after_choche_response"
+        },
+        {
+          "type": "mission_state",
+          "missionId": "ch1_restore_asora_core",
+          "state": "logs_recovered",
+          "conversationId": "luna_ch1_after_recovery_hopeful_directions"
+        },
+        {
+          "type": "mission_state",
+          "missionId": "ch1_restore_asora_core",
+          "state": "logs_recovered",
+          "conversationId": "luna_ch1_before_daemon_line_breaking_signal"
+        },
+        {
+          "type": "mission_state",
+          "missionId": "ch1_restore_asora_core",
+          "state": "anomaly_detected",
+          "conversationId": "luna_ch1_signal_cut_reaction_short"
+        },
+        {
+          "type": "default",
+          "conversationId": "luna_ch1_default_offline_silence"
+        }
+      ]
+    },
+    {
+      "characterId": "daemon",
+      "routes": [
+        {
+          "type": "mission_state",
+          "missionId": "ch1_restore_asora_core",
+          "state": "anomaly_detected",
+          "conversationId": "daemon_ch1_first_manifest_cold"
+        },
+        {
+          "type": "mission_state",
+          "missionId": "ch1_restore_asora_core",
+          "state": "anomaly_detected",
+          "conversationId": "daemon_ch1_first_manifest_lines_extended"
+        },
+        {
+          "type": "default",
+          "conversationId": "daemon_ch1_default_silent_background"
         }
       ]
     }

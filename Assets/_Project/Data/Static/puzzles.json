@@ -3,16 +3,45 @@
   "puzzles": [
     {
       "id": 101,
-      "key": "academic_console_check",
-      "type": "interface",
-      "title": "Consola del Servicio Académico",
-      "description": "Simula la consola del servicio académico. El jugador debe interpretar el estado y confirmar la restauración.",
+      "key": "asora_pipes_boot",
+      "type": "logic",
+      "title": "Reconfiguración de Rutas — Nodo de Arranque",
+      "description": "Puzzle de tuberías donde el jugador reconfigura el flujo entre los servicios básicos de ASORA para restaurar el nodo de arranque.",
       "difficulty": "facil",
       "hints": [
-        "Revisa los indicadores de conexión y base de datos.",
-        "Si todos los módulos están en verde, confirma el estado."
+        "Piensa en cada servicio como una habitación de una casa que necesita agua.",
+        "Asegúrate de que todas las salidas estén conectadas a un destino válido, sin fugas ni tuberías muertas.",
+        "La ruta debe permitir que el flujo llegue desde la fuente principal hasta todos los módulos clave."
       ],
-      "solution": "confirmar_estado_ok"
+      "solution": "all_pipes_connected"
+    },
+    {
+      "id": 102,
+      "key": "asora_routes_navigation",
+      "type": "arcade",
+      "title": "Simulación de Rutas — Nave de Servicio",
+      "description": "Simulación donde el jugador controla un módulo de servicio como una nave que viaja por las rutas de ASORA, evitando barreras y alcanzando el nodo central para reconstruir parte del mapa del sistema.",
+      "difficulty": "media",
+      "hints": [
+        "Observa primero el patrón de las barreras antes de avanzar.",
+        "Las rutas más estables suelen ser las que tienen menos obstáculos en secuencia.",
+        "Tu objetivo es llegar al nodo central, no recorrer todas las rutas posibles."
+      ],
+      "solution": "reach_core_node"
+    },
+    {
+      "id": 103,
+      "key": "asora_recovery_runner",
+      "type": "platformer",
+      "title": "Recovery Runner — Registros Corruptos",
+      "description": "Minijuego tipo runner/plataformero donde el jugador recorre un módulo dañado, esquiva bloques corruptos y recolecta registros válidos para reconstruir los logs críticos de ASORA.",
+      "difficulty": "media",
+      "hints": [
+        "Evita los bloques marcados como error: representan datos corruptos.",
+        "Recolecta todos los registros válidos antes de llegar al final del recorrido.",
+        "Algunas plataformas seguras pueden requerir un pequeño riesgo para alcanzar más registros."
+      ],
+      "solution": "collect_all_logs"
     }
   ]
 }

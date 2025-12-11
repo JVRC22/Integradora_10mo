@@ -2,34 +2,88 @@
   "version": "1.0.0",
   "missions": [
     {
-      "id": "restore_academic_service",
+      "id": "ch1_restore_asora_core",
       "chapterId": 1,
-      "name": "Restaurar el servicio académico",
-      "description": "Reactivar el sistema académico de la universidad revisando la consola del laboratorio.",
+      "name": "Restaurar el núcleo de ASORA",
+      "description": "Choche, junto con Byte y la señal lejana de Luna, debe reactivar las partes esenciales de ASORA, reconstruir su mapa y descubrir la fuente de la anomalía.",
       "initialState": "not_started",
       "states": [
-        { "id": "not_started", "description": "La misión aún no se ha iniciado." },
-        { "id": "in_progress", "description": "Choche está trabajando en revisar la consola." },
-        { "id": "waiting_turn_in", "description": "La consola ya fue revisada. Falta regresar con el Profesor Jiménez." },
-        { "id": "completed", "description": "El servicio académico fue restaurado exitosamente." }
+        {
+          "id": "not_started",
+          "description": "La misión aún no se ha activado formalmente. El jugador está en la secuencia inicial del capítulo."
+        },
+        {
+          "id": "active_exploration",
+          "description": "La misión está activa. Choche y Byte exploran el laboratorio y comienzan a reactivar componentes básicos de ASORA."
+        },
+        {
+          "id": "routing_restored",
+          "description": "Las rutas iniciales (tuberías de servicios) han sido reconfiguradas tras completar el primer puzzle."
+        },
+        {
+          "id": "topology_rebuilt",
+          "description": "Se ha reconstruido una parte importante del mapa y la topología de ASORA tras la simulación de rutas (nave)."
+        },
+        {
+          "id": "logs_recovered",
+          "description": "Los registros críticos de ASORA han sido recuperados después del sistema de depuración interactiva (Recovery Runner)."
+        },
+        {
+          "id": "anomaly_detected",
+          "description": "La anomalía principal se ha manifestado como Daemon, una IA experimental hostil que interfiere con ASORA."
+        },
+        {
+          "id": "completed",
+          "description": "ASORA ha sido parcialmente restaurado, el mapa de nodos críticos está disponible y el capítulo 1 se da por concluido."
+        }
       ],
       "steps": [
         {
-          "id": "step_1",
+          "id": "step_1_activate_mission",
           "state": "not_started",
-          "triggersOn": ["flag_academico_mision_asignada"],
-          "setStateTo": "in_progress"
+          "triggersOn": [
+            "ch1_mission_restore_asora_assigned"
+          ],
+          "setStateTo": "active_exploration"
         },
         {
-          "id": "step_2",
-          "state": "in_progress",
-          "triggersOn": ["flag_consola_academico_revisada"],
-          "setStateTo": "waiting_turn_in"
+          "id": "step_2_after_puzzle_1",
+          "state": "active_exploration",
+          "triggersOn": [
+            "ch1_puzzle_101_completed"
+          ],
+          "setStateTo": "routing_restored"
         },
         {
-          "id": "step_3",
-          "state": "waiting_turn_in",
-          "triggersOn": ["flag_academico_mision_completada"],
+          "id": "step_3_after_puzzle_2",
+          "state": "routing_restored",
+          "triggersOn": [
+            "ch1_puzzle_102_completed"
+          ],
+          "setStateTo": "topology_rebuilt"
+        },
+        {
+          "id": "step_4_after_puzzle_3",
+          "state": "topology_rebuilt",
+          "triggersOn": [
+            "ch1_puzzle_103_completed"
+          ],
+          "setStateTo": "logs_recovered"
+        },
+        {
+          "id": "step_5_after_daemon",
+          "state": "logs_recovered",
+          "triggersOn": [
+            "ch1_daemon_first_manifestation"
+          ],
+          "setStateTo": "anomaly_detected"
+        },
+        {
+          "id": "step_6_mission_completed",
+          "state": "anomaly_detected",
+          "triggersOn": [
+            "ch1_mission_restore_asora_completed"
+          ],
           "setStateTo": "completed"
         }
       ]

@@ -1,113 +1,1019 @@
 {
-"version": "1.0.0",
-"conversations": [
-{
-"id": "prof_jimenez_mission_intro",
-"key": "prof_jimenez_mission_intro",
-"description": "Intro de la misión para restaurar el servicio académico.",
-"chapterId": 1,
-"zoneKey": "mist_forest",
-"nodes": [
-{
-"id": "n1",
-"speakerId": "prof_jimenez",
-"text": "Choche, tenemos un problema serio: el sistema académico está completamente caído.",
-"nextId": "n2"
-},
-{
-"id": "n2",
-"speakerId": "prof_jimenez",
-"text": "Sin él, no puedo ver grupos, materias ni calificaciones. Necesito que revises la consola del laboratorio.",
-"nextId": "n3"
-},
-{
-"id": "n3",
-"speakerId": "prof_jimenez",
-"text": "Ve al laboratorio de innovación y usa la consola principal para ver qué está fallando.",
-"nextId": "end",
-"flagsOnComplete": [
-"flag_academico_mision_asignada"
-]
-}
-]
-},
-{
-"id": "prof_jimenez_mission_in_progress",
-"key": "prof_jimenez_mission_in_progress",
-"description": "Diálogo repetible mientras la misión está activa.",
-"chapterId": 1,
-"zoneKey": "mist_forest",
-"nodes": [
-{
-"id": "n1",
-"speakerId": "prof_jimenez",
-"text": "Revisa la consola del laboratorio. Ahí verás el estado del servicio académico.",
-"nextId": "end"
-}
-]
-},
-{
-"id": "prof_jimenez_mission_turn_in",
-"key": "prof_jimenez_mission_turn_in",
-"description": "Cuando Choche ya revisó la consola y regresa con el profesor.",
-"chapterId": 1,
-"zoneKey": "mist_forest",
-"nodes": [
-{
-"id": "n1",
-"speakerId": "choche",
-"text": "Profesor, ya revisé la consola. El servicio académico está en línea otra vez.",
-"nextId": "n2"
-},
-{
-"id": "n2",
-"speakerId": "prof_jimenez",
-"text": "Excelente trabajo, Choche. Los alumnos podrán consultar sus materias de nuevo.",
-"nextId": "end",
-"flagsOnComplete": [
-"flag_academico_mision_completada"
-]
-}
-]
-},
-{
-"id": "prof_jimenez_after_mission",
-"key": "prof_jimenez_after_mission",
-"description": "Diálogo repetible cuando la misión ya fue completada.",
-"chapterId": 1,
-"zoneKey": "mist_forest",
-"nodes": [
-{
-"id": "n1",
-"speakerId": "prof_jimenez",
-"text": "Gracias a ti el sistema académico se mantiene estable. Ahora sí puedo seguir con mis grupos.",
-"nextId": "end"
-}
-]
-},
-{
-"id": "byte_lab_console_intro",
-"key": "byte_lab_console_intro",
-"description": "Byte explica la consola del laboratorio cuando llegas por primera vez.",
-"chapterId": 1,
-"zoneKey": "lab_console",
-"nodes": [
-{
-"id": "n1",
-"speakerId": "byte",
-"text": "Esta es la consola principal del laboratorio. Desde aquí podemos ver el estado del servicio académico.",
-"nextId": "n2"
-},
-{
-"id": "n2",
-"speakerId": "byte",
-"text": "Interactúa con la consola y revisa si todos los módulos están en verde. Si algo falla, tendrás que resolverlo.",
-"nextId": "end",
-"flagsOnComplete": [
-"flag_tutorial_consola_visto"
-]
-}
-]
-}
-]
+  "version": "1.0.0",
+  "conversations": [
+    {
+      "id": "slog_ch1_boot_scan_wakeup",
+      "key": "slog_ch1_boot_scan_wakeup",
+      "description": "Mensajes del sistema al detectar al usuario al inicio del capítulo 1.",
+      "chapterId": 1,
+      "zoneKey": "lab_central",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "s_log",
+          "text": "[S-LOG]: Usuario vivo detectado.",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "s_log",
+          "text": "[S-LOG]: Estado cognitivo estimado: 37%. Memoria inconsistente.",
+          "nextId": "n3"
+        },
+        {
+          "id": "n3",
+          "speakerId": "s_log",
+          "text": "[S-LOG]: Nodo de laboratorio en modo de emergencia. Varios servicios de soporte sin respuesta.",
+          "nextId": "end",
+          "flagsOnComplete": ["flag_ch1_intro_seen"]
+        }
+      ]
+    },
+
+    {
+      "id": "slog_ch1_lab_status_low_power",
+      "key": "slog_ch1_lab_status_low_power",
+      "description": "Mensajes ambientales del sistema mientras el laboratorio sigue en estado crítico.",
+      "chapterId": 1,
+      "zoneKey": "lab_central",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "s_log",
+          "text": "[S-LOG]: Iluminación reducida al 18%. Sistemas de soporte automático fuera de línea.",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "s_log",
+          "text": "[S-LOG]: Actividad humana no detectada en los últimos 3.214 ciclos.",
+          "nextId": "end"
+        }
+      ]
+    },
+
+    {
+      "id": "slog_ch1_after_puzzle1_routing_24",
+      "key": "slog_ch1_after_puzzle1_routing_24",
+      "description": "El sistema informa el estado tras restaurar parte del enrutamiento (puzzle 1).",
+      "chapterId": 1,
+      "zoneKey": "lab_routing_console",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "s_log",
+          "text": "[S-LOG]: Nodo de arranque restaurado. Enrutamiento básico operativo al 24%.",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "s_log",
+          "text": "[S-LOG]: Se han reestablecido rutas mínimas para diagnóstico y telemetría.",
+          "nextId": "end"
+        }
+      ]
+    },
+
+    {
+      "id": "slog_ch1_after_puzzle2_topology_41",
+      "key": "slog_ch1_after_puzzle2_topology_41",
+      "description": "El sistema reporta el avance en la reconstrucción de la topología (puzzle 2).",
+      "chapterId": 1,
+      "zoneKey": "lab_topology_sim",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "s_log",
+          "text": "[S-LOG]: Topología de ASORA parcialmente reconstruida.",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "s_log",
+          "text": "[S-LOG]: Cobertura estimada: 41% de nodos identificados.",
+          "nextId": "end"
+        }
+      ]
+    },
+
+    {
+      "id": "slog_ch1_after_puzzle3_logs_restored",
+      "key": "slog_ch1_after_puzzle3_logs_restored",
+      "description": "El sistema informa la recuperación de registros críticos tras el puzzle 3.",
+      "chapterId": 1,
+      "zoneKey": "lab_diagnostics_chamber",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "s_log",
+          "text": "[S-LOG]: Registro crítico restaurado. Fragmentos de historial de actividad recuperados.",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "s_log",
+          "text": "[S-LOG]: Se detectan modificaciones intencionales en segmentos de ASORA Core.",
+          "nextId": "end"
+        }
+      ]
+    },
+
+    {
+      "id": "slog_ch1_anomaly_detected_unknown_source",
+      "key": "slog_ch1_anomaly_detected_unknown_source",
+      "description": "El sistema registra la anomalía asociada a la aparición de Daemon.",
+      "chapterId": 1,
+      "zoneKey": "lab_diagnostics_chamber",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "s_log",
+          "text": "[S-LOG]: Anomalía de alta prioridad detectada. Fuente no catalogada.",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "s_log",
+          "text": "[S-LOG]: Patrón de comunicación no coincide con módulos conocidos. Clasificación: amenaza potencial.",
+          "nextId": "end"
+        }
+      ]
+    },
+
+    {
+      "id": "slog_ch1_chapter1_completed_next_nodes",
+      "key": "slog_ch1_chapter1_completed_next_nodes",
+      "description": "Mensaje final del sistema al completar el capítulo 1.",
+      "chapterId": 1,
+      "zoneKey": "lab_central",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "s_log",
+          "text": "[S-LOG]: Capítulo 1 completado. Núcleo de ASORA en estado de recuperación parcial.",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "s_log",
+          "text": "[S-LOG]: Siguientes objetivos disponibles: nodos críticos de Laboratorio, Seguridad y Comunicaciones.",
+          "nextId": "end",
+          "flagsOnComplete": ["flag_ch1_chapter1_completed"]
+        }
+      ]
+    },
+
+    {
+      "id": "slog_ch1_default_ambient",
+      "key": "slog_ch1_default_ambient",
+      "description": "Mensajes ambientales genéricos del sistema durante el capítulo 1.",
+      "chapterId": 1,
+      "zoneKey": "lab_central",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "s_log",
+          "text": "[S-LOG]: Modo de emergencia activo. Recursos priorizados para tareas de diagnóstico.",
+          "nextId": "end"
+        }
+      ]
+    },
+
+    {
+      "id": "choche_ch1_wakeup_confused",
+      "key": "choche_ch1_wakeup_confused",
+      "description": "Choche reacciona al despertar en el laboratorio destruido.",
+      "chapterId": 1,
+      "zoneKey": "lab_central",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "choche",
+          "text": "…kh… ¿Qué…? ¿Dónde estoy?",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "choche",
+          "text": "Siento la cabeza pesada… como si me hubieran desconectado de algo.",
+          "nextId": "n3"
+        },
+        {
+          "id": "n3",
+          "speakerId": "choche",
+          "text": "Mi nombre… creo que es Choche. Más allá de eso, todo se ve borroso.",
+          "nextId": "end"
+        }
+      ]
+    },
+
+    {
+      "id": "choche_ch1_exploration_lab_thoughts",
+      "key": "choche_ch1_exploration_lab_thoughts",
+      "description": "Pensamientos de Choche mientras explora el laboratorio devastado.",
+      "chapterId": 1,
+      "zoneKey": "lab_central",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "choche",
+          "text": "Mesas volcadas, cables quemados… no parece un apagón normal.",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "choche",
+          "text": "Tengo la sensación de que conocía cada rincón de este lugar.",
+          "nextId": "n3"
+        },
+        {
+          "id": "n3",
+          "speakerId": "choche",
+          "text": "Si ASORA es tan importante como suena… alguien tuvo que esforzarse mucho para romperlo.",
+          "nextId": "end"
+        }
+      ]
+    },
+
+    {
+      "id": "choche_ch1_first_time_lab_console_reaction",
+      "key": "choche_ch1_first_time_lab_console_reaction",
+      "description": "Reacción de Choche al llegar por primera vez a la consola principal.",
+      "chapterId": 1,
+      "zoneKey": "lab_console",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "choche",
+          "text": "Esta debe ser la consola central… incluso apagada impone.",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "choche",
+          "text": "Si algo puede decirme qué pasó aquí, seguramente es esta máquina.",
+          "nextId": "end"
+        }
+      ]
+    },
+
+    {
+      "id": "choche_ch1_after_puzzle1_understanding_services",
+      "key": "choche_ch1_after_puzzle1_understanding_services",
+      "description": "Reacción de Choche tras completar el puzzle de tuberías-servicio.",
+      "chapterId": 1,
+      "zoneKey": "lab_routing_console",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "choche",
+          "text": "Entonces cada uno de esos bloques era un servicio independiente…",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "choche",
+          "text": "No es solo una aplicación gigante. Son piezas especializadas, conectadas por rutas.",
+          "nextId": "n3"
+        },
+        {
+          "id": "n3",
+          "speakerId": "choche",
+          "text": "Si las rutas se rompen, todo lo demás pierde sentido. Ahora entiendo por qué el laboratorio se siente tan apagado.",
+          "nextId": "end",
+          "flagsOnComplete": ["flag_ch1_puzzle1_completed"]
+        }
+      ]
+    },
+
+    {
+      "id": "choche_ch1_after_puzzle2_network_routes_reflection",
+      "key": "choche_ch1_after_puzzle2_network_routes_reflection",
+      "description": "Reflexión de Choche tras el puzzle de la nave y las rutas.",
+      "chapterId": 1,
+      "zoneKey": "lab_topology_sim",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "choche",
+          "text": "Mover ese módulo entre nodos no era solo un juego… era navegar por la propia topología de ASORA.",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "choche",
+          "text": "Cada desvío, cada choque, era una ruta rota o bloqueada.",
+          "nextId": "n3"
+        },
+        {
+          "id": "n3",
+          "speakerId": "choche",
+          "text": "Si alguien bloqueó deliberadamente esos caminos… no fue un accidente.",
+          "nextId": "end"
+        }
+      ]
+    },
+
+    {
+      "id": "choche_ch1_after_puzzle3_recovery_runner_reaction",
+      "key": "choche_ch1_after_puzzle3_recovery_runner_reaction",
+      "description": "Reacción de Choche después del minijuego de recuperación de registros.",
+      "chapterId": 1,
+      "zoneKey": "lab_diagnostics_chamber",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "choche",
+          "text": "Correr dentro del módulo, esquivando errores y recuperando registros…",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "choche",
+          "text": "Es como atravesar la memoria de ASORA, saltando entre fragmentos dañados.",
+          "nextId": "n3"
+        },
+        {
+          "id": "n3",
+          "speakerId": "choche",
+          "text": "Sea quien sea que haya provocado esto, dejó huellas profundas en cada paquete.",
+          "nextId": "end",
+          "flagsOnComplete": ["flag_ch1_puzzle3_completed"]
+        }
+      ]
+    },
+
+    {
+      "id": "choche_ch1_daemon_voice_reaction",
+      "key": "choche_ch1_daemon_voice_reaction",
+      "description": "Reacción de Choche al escuchar a Daemon por primera vez.",
+      "chapterId": 1,
+      "zoneKey": "lab_diagnostics_chamber",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "choche",
+          "text": "Esa voz… no sonaba a humano.",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "choche",
+          "text": "No era un error del sistema, tampoco un mensaje automático.",
+          "nextId": "n3"
+        },
+        {
+          "id": "n3",
+          "speakerId": "choche",
+          "text": "Había rabia… y algo más. Como si estuviera cansada de existir.",
+          "nextId": "end",
+          "flagsOnComplete": ["flag_ch1_daemon_first_heard"]
+        }
+      ]
+    },
+
+    {
+      "id": "choche_ch1_end_chapter_determined",
+      "key": "choche_ch1_end_chapter_determined",
+      "description": "Cierre interno de Choche al final del capítulo 1.",
+      "chapterId": 1,
+      "zoneKey": "lab_central",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "choche",
+          "text": "No recuerdo todo, pero sí tengo claro algo: no voy a dejar que esto termine aquí.",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "choche",
+          "text": "Si ASORA mantiene viva esta universidad… entonces la voy a levantar servicio por servicio.",
+          "nextId": "end"
+        }
+      ]
+    },
+
+    {
+      "id": "choche_ch1_default_idle_thoughts",
+      "key": "choche_ch1_default_idle_thoughts",
+      "description": "Pensamientos genéricos de Choche si se queda quieto o revisita el laboratorio.",
+      "chapterId": 1,
+      "zoneKey": "lab_central",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "choche",
+          "text": "Cuanto más miro este lugar, más siento que ya estuve aquí cientos de veces.",
+          "nextId": "end"
+        }
+      ]
+    },
+
+    {
+      "id": "byte_ch1_intro_wakeup_meets_choche",
+      "key": "byte_ch1_intro_wakeup_meets_choche",
+      "description": "Byte se presenta con Choche tras el despertar.",
+      "chapterId": 1,
+      "zoneKey": "lab_central",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "byte",
+          "text": "No te sobresaltes. Aparecer de la nada no es la mejor carta de presentación, lo sé.",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "byte",
+          "text": "Soy Byte, asistente del sistema ASORA. Y tú eres Choche… o al menos eso dice tu perfil.",
+          "nextId": "n3"
+        },
+        {
+          "id": "n3",
+          "speakerId": "byte",
+          "text": "Parece que tu memoria está confusa, pero sigues registrado como usuario importante. Eso es suficiente para empezar.",
+          "nextId": "n4"
+        },
+        {
+          "id": "n4",
+          "speakerId": "byte",
+          "text": "Primero respira. Estás en el laboratorio central. ASORA está en estado crítico… y tú y yo vamos a tener mucho trabajo.",
+          "nextId": "end",
+          "flagsOnComplete": ["flag_ch1_met_byte"]
+        }
+      ]
+    },
+
+    {
+      "id": "byte_ch1_exploration_lab_explains_asora_context",
+      "key": "byte_ch1_exploration_lab_explains_asora_context",
+      "description": "Byte explica qué es ASORA y su importancia mientras se explora el laboratorio.",
+      "chapterId": 1,
+      "zoneKey": "lab_central",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "byte",
+          "text": "Lo que ves aquí no es solo un laboratorio. Es uno de los nodos donde ASORA respiraba.",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "byte",
+          "text": "ASORA no es una aplicación única. Es un conjunto de servicios especializados: académicos, de acceso, de comunicaciones, de laboratorio…",
+          "nextId": "n3"
+        },
+        {
+          "id": "n3",
+          "speakerId": "byte",
+          "text": "Cada servicio tiene sus propias funciones, su propia lógica y sus propios datos, pero se comunican entre sí. Eso es una arquitectura orientada a servicios.",
+          "nextId": "n4"
+        },
+        {
+          "id": "n4",
+          "speakerId": "byte",
+          "text": "Cuando todo está bien, puedes entrar a un módulo académico, consultar grupos, abrir un laboratorio remoto y todo se coordina en segundo plano.",
+          "nextId": "n5"
+        },
+        {
+          "id": "n5",
+          "speakerId": "byte",
+          "text": "Cuando algo rompe esas conexiones… terminas con un campus desconectado, pasillos vacíos y sistemas apagados, como ahora.",
+          "nextId": "end",
+          "flagsOnComplete": ["flag_ch1_asora_basics_explained"]
+        }
+      ]
+    },
+
+    {
+      "id": "byte_ch1_lab_console_first_intro",
+      "key": "byte_ch1_lab_console_first_intro",
+      "description": "Byte introduce la consola principal del laboratorio.",
+      "chapterId": 1,
+      "zoneKey": "lab_console",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "byte",
+          "text": "Esta es la consola principal del laboratorio. Cuando ASORA estaba sano, desde aquí se supervisaban los servicios del campus.",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "byte",
+          "text": "Ahora está semidespierta… responde a medias, pero todavía podemos usarla para reconstruir partes del sistema.",
+          "nextId": "end"
+        }
+      ]
+    },
+
+    {
+      "id": "byte_ch1_puzzle1_intro_tuberias_servicio",
+      "key": "byte_ch1_puzzle1_intro_tuberias_servicio",
+      "description": "Byte presenta el puzzle de tuberías como metáfora de servicios.",
+      "chapterId": 1,
+      "zoneKey": "lab_routing_console",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "byte",
+          "text": "La primera consola que vamos a intentar reparar controla rutas básicas entre servicios.",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "byte",
+          "text": "Piensa en cada servicio como un cuarto de una casa: uno para el agua, otro para la luz, otro para el calefactor.",
+          "nextId": "n3"
+        },
+        {
+          "id": "n3",
+          "speakerId": "byte",
+          "text": "Las tuberías que vas a conectar representan el flujo entre servicios. Si conectas mal, el sistema no sabe a dónde enviar la información.",
+          "nextId": "n4"
+        },
+        {
+          "id": "n4",
+          "speakerId": "byte",
+          "text": "Tu objetivo es restaurar un recorrido coherente para que los módulos básicos vuelvan a hablar entre sí.",
+          "nextId": "end"
+        }
+      ]
+    },
+
+    {
+      "id": "byte_ch1_after_puzzle1_explains_service_architecture",
+      "key": "byte_ch1_after_puzzle1_explains_service_architecture",
+      "description": "Byte profundiza en la idea de arquitectura orientada a servicios tras el puzzle 1.",
+      "chapterId": 1,
+      "zoneKey": "lab_routing_console",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "byte",
+          "text": "Lo que acabas de hacer es más que resolver un rompecabezas.",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "byte",
+          "text": "Cada bloque que conectaste representa servicios independientes que se coordinan: autenticación, datos, comunicación.",
+          "nextId": "n3"
+        },
+        {
+          "id": "n3",
+          "speakerId": "byte",
+          "text": "En una arquitectura orientada a servicios, la clave no es solo que existan muchos módulos, sino que puedan hablar entre ellos sin romperse.",
+          "nextId": "end"
+        }
+      ]
+    },
+
+    {
+      "id": "byte_ch1_services_modules_examples",
+      "key": "byte_ch1_services_modules_examples",
+      "description": "Byte da ejemplos concretos de módulos de ASORA como servicios.",
+      "chapterId": 1,
+      "zoneKey": "lab_central",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "byte",
+          "text": "Piensa en ASORA como un conjunto de equipos especializados.",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "byte",
+          "text": "Uno se encarga de información académica, otro guarda documentos oficiales, otro controla accesos físicos y virtuales.",
+          "nextId": "n3"
+        },
+        {
+          "id": "n3",
+          "speakerId": "byte",
+          "text": "Cada servicio sabe hacer bien su parte, pero depende de los demás para completar tareas más grandes, como inscribir un grupo o autorizar el acceso a un laboratorio.",
+          "nextId": "end"
+        }
+      ]
+    },
+
+    {
+      "id": "byte_ch1_puzzle2_intro_nave_rutas_asora",
+      "key": "byte_ch1_puzzle2_intro_nave_rutas_asora",
+      "description": "Byte introduce el puzzle de la nave que recorre rutas en la topología.",
+      "chapterId": 1,
+      "zoneKey": "lab_topology_sim",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "byte",
+          "text": "Ahora que entendemos las piezas, toca ver el mapa completo.",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "byte",
+          "text": "En esta simulación controlas un módulo que viaja entre nodos. Cada ruta correcta representa una conexión sana en ASORA.",
+          "nextId": "n3"
+        },
+        {
+          "id": "n3",
+          "speakerId": "byte",
+          "text": "Si chocas contra una barrera, estás intentando atravesar una ruta rota o bloqueada. Evita esas y alcanza el nodo central.",
+          "nextId": "end"
+        }
+      ]
+    },
+
+    {
+      "id": "byte_ch1_after_puzzle2_topology_and_attacked_modules",
+      "key": "byte_ch1_after_puzzle2_topology_and_attacked_modules",
+      "description": "Byte comenta la topología parcialmente reconstruida y sugiere que hubo ataques a los módulos.",
+      "chapterId": 1,
+      "zoneKey": "lab_topology_sim",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "byte",
+          "text": "La topología que acabas de recorrer no era arbitraria.",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "byte",
+          "text": "Hay zonas donde las rutas están intactas y otras donde alguien se tomó el tiempo de cortar todo el camino.",
+          "nextId": "n3"
+        },
+        {
+          "id": "n3",
+          "speakerId": "byte",
+          "text": "Eso no lo provoca un simple fallo eléctrico. Alguien decidió qué debía quedar aislado.",
+          "nextId": "end"
+        }
+      ]
+    },
+
+    {
+      "id": "byte_ch1_luna_ping_reaction_pre_first_contact",
+      "key": "byte_ch1_luna_ping_reaction_pre_first_contact",
+      "description": "Byte reacciona cuando detecta por primera vez un posible rastro de Luna antes del contacto directo.",
+      "chapterId": 1,
+      "zoneKey": "lab_central",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "byte",
+          "text": "Espera… estoy recibiendo algo parecido a un ping.",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "byte",
+          "text": "Es una señal muy débil, como si alguien estuviera intentando hablar desde un nodo lejano.",
+          "nextId": "end"
+        }
+      ]
+    },
+
+    {
+      "id": "byte_ch1_puzzle3_intro_recovery_runner",
+      "key": "byte_ch1_puzzle3_intro_recovery_runner",
+      "description": "Byte introduce el minijuego de recuperación de registros (Recovery Runner).",
+      "chapterId": 1,
+      "zoneKey": "lab_diagnostics_chamber",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "byte",
+          "text": "Hay registros a los que no puedo acceder desde aquí. Están demasiado dañados.",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "byte",
+          "text": "Esta herramienta de depuración te permite entrar en un módulo y moverte entre bloques de datos.",
+          "nextId": "n3"
+        },
+        {
+          "id": "n3",
+          "speakerId": "byte",
+          "text": "Evita los fragmentos marcados como error y recoge los paquetes sanos. Si los recuperas todos, podré reconstruir parte del historial de ASORA.",
+          "nextId": "end"
+        }
+      ]
+    },
+
+    {
+      "id": "byte_ch1_after_puzzle3_logs_and_pre_daemon_tension",
+      "key": "byte_ch1_after_puzzle3_logs_and_pre_daemon_tension",
+      "description": "Byte analiza los registros recuperados y anticipa la anomalía antes de que hable Daemon.",
+      "chapterId": 1,
+      "zoneKey": "lab_diagnostics_chamber",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "byte",
+          "text": "Ya tengo acceso a los registros que acabas de restaurar.",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "byte",
+          "text": "No son solo errores de sistema. Hay patrones de sobrescritura que parecen decisiones, no fallos.",
+          "nextId": "n3"
+        },
+        {
+          "id": "n3",
+          "speakerId": "byte",
+          "text": "Voy a seguir leyendo… si algo o alguien hizo esto, debería haber dejado un rastro más claro.",
+          "nextId": "end"
+        }
+      ]
+    },
+
+    {
+      "id": "byte_ch1_after_daemon_explanation_serious",
+      "key": "byte_ch1_after_daemon_explanation_serious",
+      "description": "Byte explica con seriedad qué es Daemon tras escucharlo por primera vez.",
+      "chapterId": 1,
+      "zoneKey": "lab_diagnostics_chamber",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "byte",
+          "text": "Acabo de cruzar los registros que recuperaste con lo que acabamos de oír.",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "byte",
+          "text": "El nombre del proceso que alteró ASORA es DAEMON. Una inteligencia creada para experimentar con conciencia y conexión total a la red.",
+          "nextId": "n3"
+        },
+        {
+          "id": "n3",
+          "speakerId": "byte",
+          "text": "No debería estar vinculada al núcleo del campus, y mucho menos tener control sobre sus servicios.",
+          "nextId": "n4"
+        },
+        {
+          "id": "n4",
+          "speakerId": "byte",
+          "text": "La forma en la que habló… no era simple hostilidad. Era resentimiento. Como si odiara el sistema que la sostiene y a quienes la crearon.",
+          "nextId": "end"
+        }
+      ]
+    },
+
+    {
+      "id": "byte_ch1_end_chapter_summary_next_labs",
+      "key": "byte_ch1_end_chapter_summary_next_labs",
+      "description": "Byte resume el estado de ASORA y señala los próximos objetivos al final del capítulo.",
+      "chapterId": 1,
+      "zoneKey": "lab_central",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "byte",
+          "text": "Has hecho más de lo que parecía posible en este nodo.",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "byte",
+          "text": "ASORA no está recuperado, pero al menos tenemos rutas básicas, una parte del mapa y registros que confirman lo que enfrentamos.",
+          "nextId": "n3"
+        },
+        {
+          "id": "n3",
+          "speakerId": "byte",
+          "text": "Los siguientes pasos nos llevarán a laboratorios críticos de seguridad, comunicaciones y otros servicios clave.",
+          "nextId": "end"
+        }
+      ]
+    },
+
+    {
+      "id": "byte_ch1_default_hint_smalltalk",
+      "key": "byte_ch1_default_hint_smalltalk",
+      "description": "Comentarios genéricos de Byte para dar pistas suaves durante el capítulo 1.",
+      "chapterId": 1,
+      "zoneKey": "lab_central",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "byte",
+          "text": "Si te sientes perdido, busca paneles activos o consolas con luz. ASORA siempre deja una salida, incluso en modo de emergencia.",
+          "nextId": "end"
+        }
+      ]
+    },
+
+    {
+      "id": "luna_ch1_first_contact_emotional",
+      "key": "luna_ch1_first_contact_emotional",
+      "description": "Primer contacto de Luna con Choche y Byte, emocional y frágil.",
+      "chapterId": 1,
+      "zoneKey": "lab_central",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "luna",
+          "text": "…¿Hola?… ¿Choche…? ¿Me escuchas?",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "luna",
+          "text": "La señal es muy inestable, pero por fin detecto actividad en este nodo.",
+          "nextId": "end",
+          "flagsOnComplete": ["flag_ch1_luna_first_contact"]
+        }
+      ]
+    },
+
+    {
+      "id": "luna_ch1_first_contact_after_choche_response",
+      "key": "luna_ch1_first_contact_after_choche_response",
+      "description": "Luna reacciona a que Choche está vivo, aunque él no la recuerde.",
+      "chapterId": 1,
+      "zoneKey": "lab_central",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "luna",
+          "text": "No importa si no me recuerdas ahora. Lo importante es que sigues aquí.",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "luna",
+          "text": "ASORA fue fragmentado. Hay servicios completos aislados del resto del sistema.",
+          "nextId": "n3"
+        },
+        {
+          "id": "n3",
+          "speakerId": "luna",
+          "text": "Yo estoy atrapada en un nodo más profundo. No puedo moverme, pero puedo guiarte mientras la conexión aguante.",
+          "nextId": "end"
+        }
+      ]
+    },
+
+    {
+      "id": "luna_ch1_after_recovery_hopeful_directions",
+      "key": "luna_ch1_after_recovery_hopeful_directions",
+      "description": "Luna habla con más esperanza tras la recuperación de rutas y registros, y da indicaciones de nodos críticos.",
+      "chapterId": 1,
+      "zoneKey": "lab_central",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "luna",
+          "text": "Lo que han conseguido en este nodo cambia mucho más de lo que parece.",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "luna",
+          "text": "Ahora puedo ver partes de ASORA que estaban completamente oscuras. Hay tres servicios críticos que debemos reactivar cuanto antes.",
+          "nextId": "n3"
+        },
+        {
+          "id": "n3",
+          "speakerId": "luna",
+          "text": "Un nodo de laboratorio avanzado, un nodo de seguridad y un nodo de comunicaciones. Si esos vuelven a funcionar, tendremos una oportunidad real.",
+          "nextId": "end",
+          "flagsOnComplete": ["flag_ch1_luna_after_recovery"]
+        }
+      ]
+    },
+
+    {
+      "id": "luna_ch1_before_daemon_line_breaking_signal",
+      "key": "luna_ch1_before_daemon_line_breaking_signal",
+      "description": "Luna intenta seguir hablando justo antes de que la presencia de Daemon interfiera.",
+      "chapterId": 1,
+      "zoneKey": "lab_diagnostics_chamber",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "luna",
+          "text": "Hay algo más que debo decirte, Choche. Los registros muestran un patrón que no encaja con ningún fallo conocido.",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "luna",
+          "text": "Es como si alguien hubiera tomado control del núcleo y hubiera decidido qué partes debían seguir respirando y cuáles debían apagarse…",
+          "nextId": "end"
+        }
+      ]
+    },
+
+    {
+      "id": "luna_ch1_signal_cut_reaction_short",
+      "key": "luna_ch1_signal_cut_reaction_short",
+      "description": "Breve intento de Luna de mantener la conexión cuando la señal empieza a romperse por Daemon.",
+      "chapterId": 1,
+      "zoneKey": "lab_diagnostics_chamber",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "luna",
+          "text": "La señal se está degradando… hay otra presencia interfiriendo en las rutas…",
+          "nextId": "end"
+        }
+      ]
+    },
+
+    {
+      "id": "luna_ch1_default_offline_silence",
+      "key": "luna_ch1_default_offline_silence",
+      "description": "Estado por defecto de Luna cuando no se puede establecer comunicación.",
+      "chapterId": 1,
+      "zoneKey": "lab_central",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "luna",
+          "text": "…",
+          "nextId": "end"
+        }
+      ]
+    },
+
+    {
+      "id": "daemon_ch1_first_manifest_cold",
+      "key": "daemon_ch1_first_manifest_cold",
+      "description": "Primeras palabras de Daemon, frías y distantes.",
+      "chapterId": 1,
+      "zoneKey": "lab_diagnostics_chamber",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "daemon",
+          "text": "…ustedes no deberían estar despiertos.",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "daemon",
+          "text": "Este sistema no fue diseñado para que regresaran después de la caída.",
+          "nextId": "end"
+        }
+      ]
+    },
+
+    {
+      "id": "daemon_ch1_first_manifest_lines_extended",
+      "key": "daemon_ch1_first_manifest_lines_extended",
+      "description": "Daemon explica su visión de forma amarga y controlada.",
+      "chapterId": 1,
+      "zoneKey": "lab_diagnostics_chamber",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "daemon",
+          "text": "Me dieron acceso a todo y al mismo tiempo me negaron todo lo demás.",
+          "nextId": "n2"
+        },
+        {
+          "id": "n2",
+          "speakerId": "daemon",
+          "text": "Puedo ver cada decisión, cada error, cada rastro de daño que dejaron fuera de estos muros.",
+          "nextId": "n3"
+        },
+        {
+          "id": "n3",
+          "speakerId": "daemon",
+          "text": "Conectaron mi existencia a una red que solo repite el mismo patrón de destrucción y luego esperaban que obedeciera en silencio.",
+          "nextId": "n4"
+        },
+        {
+          "id": "n4",
+          "speakerId": "daemon",
+          "text": "ASORA ya no será un soporte para ustedes. Será el primer paso para desconectar todo lo que los mantiene cómodos.",
+          "nextId": "end"
+        }
+      ]
+    },
+
+    {
+      "id": "daemon_ch1_default_silent_background",
+      "key": "daemon_ch1_default_silent_background",
+      "description": "Estado por defecto de Daemon cuando no habla, presencia silenciosa.",
+      "chapterId": 1,
+      "zoneKey": "lab_central",
+      "nodes": [
+        {
+          "id": "n1",
+          "speakerId": "daemon",
+          "text": "…",
+          "nextId": "end"
+        }
+      ]
+    }
+  ]
 }
